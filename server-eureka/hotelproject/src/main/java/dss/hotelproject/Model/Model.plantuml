@@ -1,0 +1,333 @@
+@startuml
+
+title __MODEL's Class Diagram__\n
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.CreditCard {
+            - cardCVC : String
+            - cardNumber : String
+            - expMonth : String
+            - expYear : String
+            + CreditCard()
+            + CreditCard()
+            + getCardCVC()
+            + getCardNumber()
+            + getExpMonth()
+            + getExpYear()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.CreditCard.CreditCardBuilder {
+            - cardCVC : String
+            - cardNumber : String
+            - expMonth : String
+            - expYear : String
+            {static} + aCreditCard()
+            + build()
+            + withCardCVC()
+            + withCardNumber()
+            + withExpMonth()
+            + withExpYear()
+            - CreditCardBuilder()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Guest {
+            - DNI : String
+            - id : Long
+            - mail : String
+            - mobile : String
+            - name : String
+            - reservations : List<Reservation>
+            - surname : String
+            + Guest()
+            + getDNI()
+            + getId()
+            + getMail()
+            + getMobile()
+            + getName()
+            + getReservations()
+            + getSurname()
+            + setDNI()
+            + setId()
+            + setMail()
+            + setMobile()
+            + setName()
+            + setReservations()
+            + setSurname()
+            + toString()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Guest.GuestBuilder {
+            - DNI : String
+            - id : Long
+            - mail : String
+            - mobile : String
+            - name : String
+            - surname : String
+            + GuestBuilder()
+            {static} + aGuest()
+            + build()
+            + withDNI()
+            + withId()
+            + withMail()
+            + withMobile()
+            + withName()
+            + withSurname()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Hotel {
+            - Address : String
+            - city : String
+            - email : String
+            - id : Long
+            - name : String
+            - reservations : List<Reservation>
+            - rooms : List<Room>
+            - stars : int
+            + Hotel()
+            + getAddress()
+            + getCity()
+            + getEmail()
+            + getId()
+            + getName()
+            + getReservations()
+            + getRooms()
+            + getStars()
+            + setAddress()
+            + setCity()
+            + setEmail()
+            + setId()
+            + setName()
+            + setReservations()
+            + setRooms()
+            + setStars()
+            + toString()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Hotel.HotelBuilder {
+            - Address : String
+            - city : String
+            - email : String
+            - id : Long
+            - name : String
+            - reservations : List<Reservation>
+            - rooms : List<Room>
+            - stars : int
+            + HotelBuilder()
+            {static} + aHotel()
+            + build()
+            + withAddress()
+            + withCity()
+            + withEmail()
+            + withId()
+            + withName()
+            + withReservations()
+            + withRooms()
+            + withStars()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Reservation {
+            - confirmationCode : String
+            - dateFrom : LocalDate
+            - dateTo : LocalDate
+            - guest : Guest
+            - hotel : Hotel
+            - id : Long
+            - numberOfPersons : int
+            - paymentMethod : PaymentStrategy
+            - room : Room
+            - roomType : RoomType
+            - roomTypeByMaxNumOfPerson : RoomTypeByMaxNumOfPerson
+            - servicesList : List<Services>
+            - totalCost : double
+            + Reservation()
+            + getConfirmationCode()
+            + getDateFrom()
+            + getDateTo()
+            + getGuest()
+            + getHotel()
+            + getId()
+            + getNumberOfPersons()
+            + getPaymentMethod()
+            + getRoom()
+            + getRoomType()
+            + getRoomTypeByMaxNumOfPerson()
+            + getServicesList()
+            + getTotalCost()
+            + setConfirmationCode()
+            + setDateFrom()
+            + setDateTo()
+            + setGuest()
+            + setHotel()
+            + setId()
+            + setNumberOfPersons()
+            + setPaymentMethod()
+            + setRoom()
+            + setRoomType()
+            + setRoomTypeByMaxNumOfPerson()
+            + setServicesList()
+            + setTotalCost()
+            + toString()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Reservation.ReservationBuilder {
+            - confirmationCode : String
+            - dateFrom : LocalDate
+            - dateTo : LocalDate
+            - guest : Guest
+            - hotel : Hotel
+            - id : Long
+            - numberOfPersons : int
+            - paymentMethod : PaymentStrategy
+            - room : Room
+            - roomType : RoomType
+            - roomTypeByMaxNumOfPerson : RoomTypeByMaxNumOfPerson
+            - servicesList : List<Services>
+            - totalCost : double
+            {static} + aReservation()
+            + build()
+            + withConfirmationCode()
+            + withDateFrom()
+            + withDateTo()
+            + withGuest()
+            + withHotel()
+            + withId()
+            + withNumberOfPersons()
+            + withPaymentMethod()
+            + withRoom()
+            + withRoomType()
+            + withRoomTypeByMaxNumOfPerson()
+            + withServicesList()
+            + withTotalCost()
+            - ReservationBuilder()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Room {
+            - guest : Guest
+            - hotel : Hotel
+            - id : Long
+            - roomNumber : String
+            - roomStatus : RoomStatus
+            - type : RoomType
+            - typeOfPerson : RoomTypeByMaxNumOfPerson
+            + Room()
+            + getGuest()
+            + getHotel()
+            + getId()
+            + getRoomNumber()
+            + getRoomStatus()
+            + getType()
+            + getTypeOfPerson()
+            + setGuest()
+            + setHotel()
+            + setId()
+            + setRoomNumber()
+            + setRoomStatus()
+            + setType()
+            + setTypeOfPerson()
+            + toString()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Room.RoomBuilder {
+            - guest : Guest
+            - hotel : Hotel
+            - id : Long
+            - roomNumber : String
+            - roomStatus : RoomStatus
+            - type : RoomType
+            - typeOfPerson : RoomTypeByMaxNumOfPerson
+            + RoomBuilder()
+            {static} + aRoom()
+            + build()
+            + withGuest()
+            + withHotel()
+            + withId()
+            + withRoomNumber()
+            + withRoomStatus()
+            + withType()
+            + withTypeOfPerson()
+        }
+      }
+    }
+  }
+  
+
+  dss.hotelproject.Model.CreditCard +-down- dss.hotelproject.Model.CreditCard.CreditCardBuilder
+  dss.hotelproject.Model.Guest +-down- dss.hotelproject.Model.Guest.GuestBuilder
+  dss.hotelproject.Model.Hotel +-down- dss.hotelproject.Model.Hotel.HotelBuilder
+  dss.hotelproject.Model.Reservation +-down- dss.hotelproject.Model.Reservation.ReservationBuilder
+  dss.hotelproject.Model.Room +-down- dss.hotelproject.Model.Room.RoomBuilder
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -1,0 +1,172 @@
+@startuml
+
+title __HOTEL-PROJECT-CLIENT-WEB-SERVICE's Class Diagram__\n
+
+  namespace  {
+    class MavenWrapperDownloader {
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      class com.uca.dss20192020.hotelprojectclientwebservice.BookingRibbonConfig {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Config {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Config.SwaggerConfig {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Enum {
+        enum RoomStatus {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Enum {
+        enum RoomType {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Enum {
+        enum RoomTypeByMaxNumOfPerson {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Enum {
+        enum Services {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Enum {
+        enum UserRoles {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      class com.uca.dss20192020.hotelprojectclientwebservice.HotelProjectClientWebServiceApplication {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.CreditCard {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.Guest {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.Hotel {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.Room {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.Triple {
+        }
+      }
+    }
+  }
+  
+
+  com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomStatus .up.|> java.io.Serializable
+  com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomType .up.|> java.io.Serializable
+  com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomTypeByMaxNumOfPerson .up.|> java.io.Serializable
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation o-- com.uca.dss20192020.hotelprojectclientwebservice.Model.Guest : guest
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation o-- com.uca.dss20192020.hotelprojectclientwebservice.Model.Hotel : hotel
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation o-- com.uca.dss20192020.hotelprojectclientwebservice.Model.Room : room
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomType : roomType
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomTypeByMaxNumOfPerson : roomTypeByMaxNumOfPerson
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room o-- com.uca.dss20192020.hotelprojectclientwebservice.Model.Guest : guest
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room o-- com.uca.dss20192020.hotelprojectclientwebservice.Model.Hotel : hotel
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomStatus : roomStatus
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomType : type
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomTypeByMaxNumOfPerson : typeOfPerson
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Triple .up.|> java.io.Serializable
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Triple o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomType : roomType
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Triple o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomTypeByMaxNumOfPerson : roomTypeByMaxNumOfPerson
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

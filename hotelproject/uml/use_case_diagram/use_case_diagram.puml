@@ -1,0 +1,31 @@
+@startuml
+:Guest: as Guest
+:User: as User
+:Admin: as Admin
+User <|--Guest
+Guest <|--Admin
+
+(Input dates for finding room) as (FindRooms)
+(Choose one room for reservation) as (Choose)
+(Make reservation) as (MakeRes)
+(Make payment) as Payment
+(Cancel reservation) as (Cancel)
+(Guest check-in) as (CheckIn)
+(Guest check-out) as (CheckOut)
+(Registration) as (Registration)
+(Assign room to guest) as (Assign)
+
+(CheckIn).> (Payment):include
+(CheckOut) <.(Payment):extents
+(MakeRes).> (Payment):include
+(CheckIn).> (Assign):include
+(MakeRes).> (Registration):include
+
+User --> FindRooms
+User --> Choose
+User --> Registration
+User --> MakeRes
+Admin --> CheckIn
+Admin --> CheckOut
+Guest --> Cancel
+@enduml

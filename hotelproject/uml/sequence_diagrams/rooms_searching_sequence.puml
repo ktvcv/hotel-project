@@ -1,0 +1,27 @@
+@startuml
+autonumber
+actor Guest
+boundary ViewComponent
+control Controller
+boundary ReservationService
+boundary RoomService
+boundary RoomRepo
+boundary ReservationRepo
+database Database
+
+Guest->ViewComponent:Input dates for reservation
+ViewComponent->Controller: accept data and request to service
+Controller->ReservationService: getAllReservationDuringDates()
+ReservationService->ReservationRepo: request for data
+ReservationRepo->Database: call()
+Database-->ReservationRepo: answer()
+ReservationRepo-->Controller:update data
+Controller->RoomService: getAllAvailableRooms()
+ReservationService->RoomRepo: getAllRoomsInHotel()
+RoomRepo-->RoomService: update data
+RoomService->Controller: returnRequestedRooms
+
+Controller->ViewComponent: showRooms
+
+
+@enduml

@@ -1,0 +1,350 @@
+@startuml
+
+title __MODEL's Class Diagram__\n
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.CreditCard {
+            - cardCVC : String
+            - cardNumber : String
+            - expMonth : String
+            - expYear : String
+            + CreditCard()
+            + CreditCard()
+            + getCardCVC()
+            + getCardNumber()
+            + getExpMonth()
+            + getExpYear()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.CreditCard.CreditCardBuilder {
+            - cardCVC : String
+            - cardNumber : String
+            - expMonth : String
+            - expYear : String
+            {static} + aCreditCard()
+            + build()
+            + withCardCVC()
+            + withCardNumber()
+            + withExpMonth()
+            + withExpYear()
+            - CreditCardBuilder()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.Guest {
+            - DNI : String
+            - id : Long
+            - mail : String
+            - mobile : String
+            - name : String
+            - reservations : List<Reservation>
+            - surname : String
+            + Guest()
+            + getDNI()
+            + getId()
+            + getMail()
+            + getMobile()
+            + getName()
+            + getSurname()
+            + setDNI()
+            + setId()
+            + setMail()
+            + setMobile()
+            + setName()
+            + setSurname()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.Guest.GuestBuilder {
+            - DNI : String
+            - id : Long
+            - mail : String
+            - mobile : String
+            - name : String
+            - surname : String
+            + GuestBuilder()
+            {static} + aGuest()
+            + build()
+            + withDNI()
+            + withId()
+            + withMail()
+            + withMobile()
+            + withName()
+            + withSurname()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.Hotel {
+            ~ Address : String
+            ~ city : String
+            ~ email : String
+            ~ id : Long
+            ~ name : String
+            ~ reservations : List<Reservation>
+            ~ rooms : List<Room>
+            ~ stars : int
+            + Hotel()
+            + getAddress()
+            + getCity()
+            + getEmail()
+            + getId()
+            + getName()
+            + getReservations()
+            + getRooms()
+            + getStars()
+            + setAddress()
+            + setCity()
+            + setEmail()
+            + setId()
+            + setName()
+            + setReservations()
+            + setRooms()
+            + setStars()
+            + toString()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.Hotel.HotelBuilder {
+            - Address : String
+            - city : String
+            - email : String
+            - id : Long
+            - name : String
+            - reservations : List<Reservation>
+            - rooms : List<Room>
+            - stars : int
+            + HotelBuilder()
+            {static} + aHotel()
+            + build()
+            + withAddress()
+            + withCity()
+            + withEmail()
+            + withId()
+            + withName()
+            + withReservations()
+            + withRooms()
+            + withStars()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation {
+            - confirmationCode : String
+            - dateFrom : LocalDate
+            - dateTo : LocalDate
+            - id : Long
+            - numberOfPersons : int
+            - servicesList : List<Services>
+            - totalCost : double
+            + Reservation()
+            + getConfirmationCode()
+            + getDateFrom()
+            + getDateTo()
+            + getGuest()
+            + getHotel()
+            + getId()
+            + getNumberOfPersons()
+            + getRoom()
+            + getRoomType()
+            + getRoomTypeByMaxNumOfPerson()
+            + getServicesList()
+            + getTotalCost()
+            + setConfirmationCode()
+            + setDateFrom()
+            + setDateTo()
+            + setGuest()
+            + setHotel()
+            + setId()
+            + setNumberOfPersons()
+            + setRoom()
+            + setRoomType()
+            + setRoomTypeByMaxNumOfPerson()
+            + setServicesList()
+            + setTotalCost()
+            + toString()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation.ReservationBuilder {
+            - confirmationCode : String
+            - dateFrom : LocalDate
+            - dateTo : LocalDate
+            - id : Long
+            - numberOfPersons : int
+            - servicesList : List<Services>
+            - totalCost : double
+            {static} + aReservation()
+            + build()
+            + withConfirmationCode()
+            + withDateFrom()
+            + withDateTo()
+            + withGuest()
+            + withHotel()
+            + withId()
+            + withNumberOfPersons()
+            + withRoom()
+            + withRoomType()
+            + withRoomTypeByMaxNumOfPerson()
+            + withServicesList()
+            + withTotalCost()
+            - ReservationBuilder()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.Room {
+            - id : Long
+            - roomNumber : String
+            + Room()
+            + getGuest()
+            + getHotel()
+            + getId()
+            + getRoomNumber()
+            + getRoomStatus()
+            + getType()
+            + getTypeOfPerson()
+            + setGuest()
+            + setHotel()
+            + setId()
+            + setRoomNumber()
+            + setRoomStatus()
+            + setType()
+            + setTypeOfPerson()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.Room.RoomBuilder {
+            - id : Long
+            - roomNumber : String
+            + RoomBuilder()
+            {static} + aRoom()
+            + build()
+            + withGuest()
+            + withHotel()
+            + withId()
+            + withRoomNumber()
+            + withRoomStatus()
+            + withType()
+            + withTypeOfPerson()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.uca.dss20192020.hotelprojectclientwebservice {
+      namespace Model {
+        class com.uca.dss20192020.hotelprojectclientwebservice.Model.Triple {
+            - number : Integer
+            - price : Double
+            + Triple()
+            + Triple()
+            + getNumber()
+            + getPrice()
+            + getRoomType()
+            + getRoomTypeByMaxNumOfPerson()
+            + setNumber()
+            + setPrice()
+            + setRoomType()
+            + setRoomTypeByMaxNumOfPerson()
+            + toString()
+        }
+      }
+    }
+  }
+  
+
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.CreditCard +-down- com.uca.dss20192020.hotelprojectclientwebservice.Model.CreditCard.CreditCardBuilder
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Guest +-down- com.uca.dss20192020.hotelprojectclientwebservice.Model.Guest.GuestBuilder
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Hotel +-down- com.uca.dss20192020.hotelprojectclientwebservice.Model.Hotel.HotelBuilder
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation o-- com.uca.dss20192020.hotelprojectclientwebservice.Model.Guest : guest
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation o-- com.uca.dss20192020.hotelprojectclientwebservice.Model.Hotel : hotel
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation o-- com.uca.dss20192020.hotelprojectclientwebservice.Model.Room : room
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomType : roomType
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomTypeByMaxNumOfPerson : roomTypeByMaxNumOfPerson
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation +-down- com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation.ReservationBuilder
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation.ReservationBuilder o-- com.uca.dss20192020.hotelprojectclientwebservice.Model.Guest : guest
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation.ReservationBuilder o-- com.uca.dss20192020.hotelprojectclientwebservice.Model.Hotel : hotel
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation.ReservationBuilder o-- com.uca.dss20192020.hotelprojectclientwebservice.Model.Room : room
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation.ReservationBuilder o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomType : roomType
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Reservation.ReservationBuilder o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomTypeByMaxNumOfPerson : roomTypeByMaxNumOfPerson
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room o-- com.uca.dss20192020.hotelprojectclientwebservice.Model.Guest : guest
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room o-- com.uca.dss20192020.hotelprojectclientwebservice.Model.Hotel : hotel
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomStatus : roomStatus
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomType : type
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomTypeByMaxNumOfPerson : typeOfPerson
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room +-down- com.uca.dss20192020.hotelprojectclientwebservice.Model.Room.RoomBuilder
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room.RoomBuilder o-- com.uca.dss20192020.hotelprojectclientwebservice.Model.Guest : guest
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room.RoomBuilder o-- com.uca.dss20192020.hotelprojectclientwebservice.Model.Hotel : hotel
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room.RoomBuilder o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomStatus : roomStatus
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room.RoomBuilder o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomType : type
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Room.RoomBuilder o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomTypeByMaxNumOfPerson : typeOfPerson
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Triple .up.|> java.io.Serializable
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Triple o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomType : roomType
+  com.uca.dss20192020.hotelprojectclientwebservice.Model.Triple o-- com.uca.dss20192020.hotelprojectclientwebservice.Enum.RoomTypeByMaxNumOfPerson : roomTypeByMaxNumOfPerson
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

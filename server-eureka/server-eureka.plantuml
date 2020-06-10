@@ -1,0 +1,1000 @@
+@startuml
+
+title __SERVER-EUREKA's Class Diagram__\n
+
+  namespace  {
+    class MavenWrapperDownloader {
+    }
+  }
+  
+
+  namespace  {
+    class MavenWrapperDownloader {
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example.servereureka {
+      class com.example.servereureka.ServerEurekaApplication {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Config {
+        class dss.hotelproject.Config.SwaggerConfig {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Config {
+        class dss.hotelproject.Config.SwaggerConfig {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Enum {
+        enum RoomStatus {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Enum {
+        enum RoomStatus {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Enum {
+        enum RoomType {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Enum {
+        enum RoomType {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Enum {
+        enum RoomTypeByMaxNumOfPerson {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Enum {
+        enum RoomTypeByMaxNumOfPerson {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Enum {
+        enum Services {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Enum {
+        enum Services {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Enum {
+        enum UserRoles {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Enum {
+        enum UserRoles {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Exceptions {
+        class dss.hotelproject.Exceptions.AccessDeniedException {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Exceptions {
+        class dss.hotelproject.Exceptions.AccessDeniedException {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Exceptions {
+        class dss.hotelproject.Exceptions.NoDataFoundException {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Exceptions {
+        class dss.hotelproject.Exceptions.NoDataFoundException {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Exceptions {
+        class dss.hotelproject.Exceptions.NoRoomForCheckInException {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Exceptions {
+        class dss.hotelproject.Exceptions.NoRoomForCheckInException {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      class dss.hotelproject.HotelprojectApplication {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      class dss.hotelproject.HotelprojectApplication {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      class dss.hotelproject.HotelprojectApplicationTests {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      class dss.hotelproject.HotelprojectApplicationTests {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Interfaces {
+        interface dss.hotelproject.Interfaces.ICancellationService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Interfaces {
+        interface dss.hotelproject.Interfaces.ICancellationService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Interfaces {
+        interface dss.hotelproject.Interfaces.ICheckInService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Interfaces {
+        interface dss.hotelproject.Interfaces.ICheckInService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Interfaces {
+        interface dss.hotelproject.Interfaces.ICheckOut {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Interfaces {
+        interface dss.hotelproject.Interfaces.IHotelService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Interfaces {
+        interface dss.hotelproject.Interfaces.IPay {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Interfaces {
+        interface dss.hotelproject.Interfaces.IPay {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Interfaces {
+        interface dss.hotelproject.Interfaces.IReservationManage {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Interfaces {
+        interface dss.hotelproject.Interfaces.IReservationManage {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Interfaces {
+        interface dss.hotelproject.Interfaces.IReservationRepo {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Interfaces {
+        interface dss.hotelproject.Interfaces.IReservationService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Interfaces {
+        interface dss.hotelproject.Interfaces.IReservationService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Interfaces {
+        interface dss.hotelproject.Interfaces.ISearchForFreeRooms {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Interfaces {
+        interface dss.hotelproject.Interfaces.ISearchForFreeRooms {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.CreditCard {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.CreditCard {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Guest {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Guest {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Hotel {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Hotel {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Reservation {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Reservation {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Room {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Model {
+        class dss.hotelproject.Model.Room {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Payment {
+        class dss.hotelproject.Payment.CreditCardPayment {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Payment {
+        class dss.hotelproject.Payment.CreditCardPayment {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Payment {
+        interface dss.hotelproject.Payment.PaymentStrategy {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Payment {
+        interface dss.hotelproject.Payment.PaymentStrategy {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Service {
+        class dss.hotelproject.Service.CheckOutService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Service {
+        class dss.hotelproject.Service.HotelService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Service {
+        class dss.hotelproject.Service.PaymentService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Service {
+        class dss.hotelproject.Service.PaymentService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Service {
+        class dss.hotelproject.Service.ReservationService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Service {
+        class dss.hotelproject.Service.ReservationService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace Service {
+        class dss.hotelproject.Service.RoomService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.AddCardCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.AddCardCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.CancelCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.CancelCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.CheckInCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.CheckInCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.CheckOutCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.CheckOutCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.ChoiceCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.ChoiceCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        interface dss.hotelproject.cli.Command {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        interface dss.hotelproject.cli.Command {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.CreateGuestCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.CreateGuestCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.FindCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.FindCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.QuitCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.QuitCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.ReservCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace cli {
+        class dss.hotelproject.cli.ReservCommand {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace controller {
+        class dss.hotelproject.controller.Application {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace controller {
+        class dss.hotelproject.controller.Application {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace controller {
+        class dss.hotelproject.controller.GuestController {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace repos {
+        interface dss.hotelproject.repos.GuestRepo {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace repos {
+        interface dss.hotelproject.repos.GuestRepo {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace repos {
+        interface dss.hotelproject.repos.HotelRepo {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace repos {
+        interface dss.hotelproject.repos.HotelRepo {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace repos {
+        interface dss.hotelproject.repos.ReservationRepo {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace repos {
+        interface dss.hotelproject.repos.ReservationRepo {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace repos {
+        interface dss.hotelproject.repos.RoomRepo {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace repos {
+        interface dss.hotelproject.repos.RoomRepo {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace util {
+        class dss.hotelproject.util.GeneratorHelper {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace util {
+        class dss.hotelproject.util.GeneratorHelper {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace util {
+        class dss.hotelproject.util.Triple {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ss.hotelproject {
+      namespace util {
+        class dss.hotelproject.util.Triple {
+        }
+      }
+    }
+  }
+  
+
+  dss.hotelproject.Enum.RoomStatus .up.|> Serializable
+  dss.hotelproject.Enum.RoomStatus .up.|> java.io.Serializable
+  dss.hotelproject.Enum.RoomType .up.|> Serializable
+  dss.hotelproject.Enum.RoomType .up.|> java.io.Serializable
+  dss.hotelproject.Enum.RoomTypeByMaxNumOfPerson .up.|> Serializable
+  dss.hotelproject.Enum.RoomTypeByMaxNumOfPerson .up.|> java.io.Serializable
+  dss.hotelproject.Payment.CreditCardPayment .up.|> dss.hotelproject.Payment.PaymentStrategy
+  dss.hotelproject.Payment.CreditCardPayment .up.|> java.io.Serializable
+  dss.hotelproject.Payment.CreditCardPayment .up.|> PaymentStrategy
+  dss.hotelproject.Payment.CreditCardPayment .up.|> Serializable
+  dss.hotelproject.Service.CheckOutService .up.|> ICheckOut
+  dss.hotelproject.Service.HotelService .up.|> IHotelService
+  dss.hotelproject.Service.PaymentService .up.|> dss.hotelproject.Interfaces.IPay
+  dss.hotelproject.Service.PaymentService .up.|> IPay
+  dss.hotelproject.Service.ReservationService .up.|> ICancellationService
+  dss.hotelproject.Service.ReservationService .up.|> ICheckInService
+  dss.hotelproject.Service.ReservationService .up.|> IReservationManage
+  dss.hotelproject.Service.ReservationService .up.|> IReservationService
+  dss.hotelproject.Service.ReservationService .up.|> dss.hotelproject.Interfaces.ICancellationService
+  dss.hotelproject.Service.ReservationService .up.|> dss.hotelproject.Interfaces.ICheckInService
+  dss.hotelproject.Service.ReservationService .up.|> dss.hotelproject.Interfaces.IReservationManage
+  dss.hotelproject.Service.ReservationService .up.|> dss.hotelproject.Interfaces.IReservationService
+  dss.hotelproject.Service.ReservationService .up.|> dss.hotelproject.Interfaces.ISearchForFreeRooms
+  dss.hotelproject.Service.RoomService .up.|> ISearchForFreeRooms
+  dss.hotelproject.cli.AddCardCommand .up.|> Command
+  dss.hotelproject.cli.AddCardCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.CancelCommand .up.|> Command
+  dss.hotelproject.cli.CancelCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.CheckInCommand .up.|> Command
+  dss.hotelproject.cli.CheckInCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.CheckOutCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.CheckOutCommand .up.|> Command
+  dss.hotelproject.cli.ChoiceCommand .up.|> Command
+  dss.hotelproject.cli.ChoiceCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.CreateGuestCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.CreateGuestCommand .up.|> Command
+  dss.hotelproject.cli.FindCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.FindCommand .up.|> Command
+  dss.hotelproject.cli.QuitCommand .up.|> Command
+  dss.hotelproject.cli.QuitCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.ReservCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.ReservCommand .up.|> Command
+  dss.hotelproject.util.Triple .up.|> Serializable
+  dss.hotelproject.util.Triple .up.|> java.io.Serializable
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
