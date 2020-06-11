@@ -1,0 +1,18 @@
+@startuml
+
+title __HOTEL-PROJECT's Activity diagram__\n
+(*) --> "Guest's request for finding room"
+"Guest's request for finding room" --> "Input dates for reservation"
+if "Room is available" then
+-->[true] "Show results of request"
+if "Guest choose room for reservation" then
+-->[true] "Guest input dni for reservation"
+if "Guest already exists" then
+-->[true] "Creation of reservation"
+--> "Approving reservation by adding payment info"
+--> (*)
+else
+  ->[false] "Guest's request for finding room"
+
+
+@enduml

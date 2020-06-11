@@ -1,0 +1,21 @@
+@startuml
+actor Guest
+boundary SearchingRoomViewComponent
+control Controller
+boundary ReservationService
+boundary IHotelRepository
+database Database
+
+Guest->SearchingRoomViewComponent:Input data for reservation
+SearchingRoomViewComponent->Controller:
+Controller->ReservationService:searchForFreeRooms(dates,)
+ReservationService->IHotelRepository: requestForAllRoom()
+ReservationService->IHotelRepository: requestForAllReservationWithinDates(dates,)
+IHotelRepository->Database: requestForData
+Database-->ReservationService: responseFromDB
+ReservationService->ReservationService: findFreeRooms(reservations, dates, )
+ReservationService->Controller: updateRoomsDataset()
+Controller->SearchingRoomViewComponent:updateView()
+SearchingRoomViewComponent->Guest:show list of available rooms
+
+@enduml

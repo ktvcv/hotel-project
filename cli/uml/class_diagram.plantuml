@@ -1,0 +1,29 @@
+@startuml
+
+title __HOTEL-PROJECT's Class Diagram__\n
+
+
+  uca.dss20192020.hotelproject.Model.Reservation o-- uca.dss20192020.hotelproject.Model.Guest : guest
+  uca.dss20192020.hotelproject.Model.Reservation o-- uca.dss20192020.hotelproject.Payment.PaymentStrategy : paymentMethod
+  uca.dss20192020.hotelproject.Model.Reservation o-- uca.dss20192020.hotelproject.Model.Room : room
+  uca.dss20192020.hotelproject.Model.Hotel *-- uca.dss20192020.hotelproject.Model.Room : room
+  uca.dss20192020.hotelproject.Model.Reservation o-- uca.dss20192020.hotelproject.Enum.RoomType : roomType
+  uca.dss20192020.hotelproject.Model.Reservation o-- uca.dss20192020.hotelproject.Enum.RoomTypeByMaxNumOfPerson : roomTypeByMaxNumOfPerson
+  uca.dss20192020.hotelproject.Model.Room o-- uca.dss20192020.hotelproject.Model.Guest : guest
+  uca.dss20192020.hotelproject.Model.Room o-- uca.dss20192020.hotelproject.Enum.RoomStatus : roomStatus
+  uca.dss20192020.hotelproject.Model.Room o-- uca.dss20192020.hotelproject.Enum.RoomType : type
+  uca.dss20192020.hotelproject.Model.Room o-- uca.dss20192020.hotelproject.Enum.RoomTypeByMaxNumOfPerson : typeOfPerson
+  uca.dss20192020.hotelproject.Payment.CreditCardPayment .up.|> uca.dss20192020.hotelproject.Payment.PaymentStrategy
+  uca.dss20192020.hotelproject.Payment.CreditCardPayment o-- uca.dss20192020.hotelproject.Model.CreditCard : creditCard
+  uca.dss20192020.hotelproject.Service.GuestService .up.|> uca.dss20192020.hotelproject.Interfaces.IGuestService
+  uca.dss20192020.hotelproject.Service.GuestService o-- uca.dss20192020.hotelproject.Service.HotelService : hotelService
+  uca.dss20192020.hotelproject.Service.HotelService .up.|> uca.dss20192020.hotelproject.Interfaces.IHotelRepo
+  uca.dss20192020.hotelproject.Service.PaymentService .up.|> uca.dss20192020.hotelproject.Interfaces.IPay
+  uca.dss20192020.hotelproject.Service.ReservationService .up.|> uca.dss20192020.hotelproject.Interfaces.ICancellationService
+  uca.dss20192020.hotelproject.Service.ReservationService .up.|> uca.dss20192020.hotelproject.Interfaces.ICheckInService
+  uca.dss20192020.hotelproject.Service.ReservationService .up.|> uca.dss20192020.hotelproject.Interfaces.IReservationService
+  uca.dss20192020.hotelproject.Service.ReservationService .up.|> uca.dss20192020.hotelproject.Interfaces.ISearchForFreeRooms
+  uca.dss20192020.hotelproject.Service.ReservationService o-- uca.dss20192020.hotelproject.Service.HotelService : hotelService
+  uca.dss20192020.hotelproject.Service.ReservationService o-- uca.dss20192020.hotelproject.Service.PaymentService : paymentService
+
+@enduml

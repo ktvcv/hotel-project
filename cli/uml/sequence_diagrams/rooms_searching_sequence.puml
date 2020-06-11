@@ -1,0 +1,17 @@
+@startuml
+actor Guest
+boundary ViewComponent
+control Controller
+boundary ReservationService
+boundary IHotelRepository
+database Database
+
+Guest->SearchingRoomViewComponent:Input dni of guest
+SearchingRoomViewComponent->Controller: getReservationData
+Controller->ReservationService: checkForGuestExisting
+ReservationService->Database: requestForCheck()
+Database->Controller: responseWithAnswer
+Controller->ViewComponent: redirecting to addPaymentMethod()
+Controller->ViewComponent: redirecting to registration()
+
+@enduml
