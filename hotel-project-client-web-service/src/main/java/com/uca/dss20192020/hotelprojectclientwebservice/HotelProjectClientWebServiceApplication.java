@@ -14,10 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.validation.Valid;
@@ -50,9 +47,9 @@ public class HotelProjectClientWebServiceApplication {
 		return restTemplate.getForEntity(url,Triple.class,hotel_id,dateFrom, dateTo, numberOfPerson);
 	}
 
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public ResponseEntity<String> freeRooms() {
-		final String url = "http://booking/index";
+	@GetMapping(value = "/welcome/{name}")
+	public ResponseEntity<String> freeRooms(@PathVariable String name) {
+		final String url = "http://BOOKINGSERVICE/index/"+name;
 
 		return restTemplate.getForEntity(url,String.class);
 	}

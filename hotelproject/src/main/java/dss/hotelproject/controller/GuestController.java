@@ -16,8 +16,7 @@ import javax.validation.constraints.Pattern;
 
 @RestController
 public class GuestController {
-    @Autowired
-    private ReservationService reservationService;
+
 
     @Autowired
     private GuestService guestService;

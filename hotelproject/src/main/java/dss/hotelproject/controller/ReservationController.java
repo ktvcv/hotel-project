@@ -85,19 +85,6 @@ public class ReservationController {
         return reservation;
     }
 
-    @RequestMapping(value="/cancel",
-            params = {"hotel_id", "reservation_code"},
-            method= RequestMethod.POST)
-    public String cancelReservation(@RequestParam("hotel_id") Long hotel_id,
-                                    @RequestParam("reservation_code") String code)
-    {
-        double charge = reservationService.cancelReservation(hotel_id, code);
-        if(charge == -1)
-            return "No such reservation";
-
-        return "Amount of charge "+ charge;
-
-    }
 
     @RequestMapping(value="/getReservation",
             params = {"hotel_id", "reservation_code"},

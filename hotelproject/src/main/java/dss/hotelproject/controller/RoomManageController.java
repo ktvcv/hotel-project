@@ -20,10 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.constraints.Max;
 import javax.ws.rs.core.Response;
@@ -36,7 +33,6 @@ public class RoomManageController {
 
     @Autowired
     private ReservationService reservationService;
-
 
     @Autowired
     private RoomService roomService;
@@ -65,11 +61,10 @@ public class RoomManageController {
                 (hotel_id, dateFrom, dateTo, numberOfPerson, reservations);
 
     }
-    @RequestMapping(value = "/index",
-            method = RequestMethod.GET)
-    public String index()
+    @GetMapping(value = "/index/{name}")
+    public String index(@PathVariable String name)
     {
-        return "Welcome!";
+        return "Welcome! + " + name;
     }
 
     @RequestMapping(value = "/makeRoomUnavailable",

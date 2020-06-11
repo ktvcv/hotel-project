@@ -1,0 +1,56 @@
+@startuml
+
+title __HOTELPROJECT's Class Diagram__\n
+
+
+  dss.hotelproject.Enum.RoomStatus .up.|> java.io.Serializable
+  dss.hotelproject.Enum.RoomType .up.|> java.io.Serializable
+  dss.hotelproject.Enum.RoomTypeByMaxNumOfPerson .up.|> java.io.Serializable
+  dss.hotelproject.Model.Reservation o-- dss.hotelproject.Model.Guest : guest
+  dss.hotelproject.Model.Reservation o-- dss.hotelproject.Model.Hotel : hotel
+  dss.hotelproject.Model.Reservation o-- dss.hotelproject.Payment.PaymentStrategy : paymentMethod
+  dss.hotelproject.Model.Reservation o-- dss.hotelproject.Model.Room : room
+  dss.hotelproject.Model.Reservation o-- dss.hotelproject.Enum.RoomType : roomType
+  dss.hotelproject.Model.Reservation o-- dss.hotelproject.Enum.RoomTypeByMaxNumOfPerson : roomTypeByMaxNumOfPerson
+  dss.hotelproject.Model.Room o-- dss.hotelproject.Model.Guest : guest
+  dss.hotelproject.Model.Room o-- dss.hotelproject.Model.Hotel : hotel
+  dss.hotelproject.Model.Room o-- dss.hotelproject.Enum.RoomStatus : roomStatus
+  dss.hotelproject.Model.Room o-- dss.hotelproject.Enum.RoomType : type
+  dss.hotelproject.Model.Room o-- dss.hotelproject.Enum.RoomTypeByMaxNumOfPerson : typeOfPerson
+  dss.hotelproject.Payment.CreditCardPayment .up.|> dss.hotelproject.Payment.PaymentStrategy
+  dss.hotelproject.Payment.CreditCardPayment .up.|> java.io.Serializable
+  dss.hotelproject.Payment.CreditCardPayment o-- dss.hotelproject.Model.CreditCard : creditCard
+  dss.hotelproject.Service.CheckOutService .up.|> dss.hotelproject.Interfaces.ICheckOut
+  dss.hotelproject.Service.CheckOutService o-- dss.hotelproject.Service.PaymentService : paymentService
+  dss.hotelproject.Service.CheckOutService o-- dss.hotelproject.repos.ReservationRepo : reservationRepo
+  dss.hotelproject.Service.CheckOutService o-- dss.hotelproject.repos.RoomRepo : roomRepo
+  dss.hotelproject.Service.HotelService .up.|> dss.hotelproject.Interfaces.IHotelService
+  dss.hotelproject.Service.HotelService o-- dss.hotelproject.repos.HotelRepo : hotelRepo
+  dss.hotelproject.Service.PaymentService .up.|> dss.hotelproject.Interfaces.IPay
+  dss.hotelproject.Service.ReservationService .up.|> dss.hotelproject.Interfaces.ICancellationService
+  dss.hotelproject.Service.ReservationService .up.|> dss.hotelproject.Interfaces.ICheckInService
+  dss.hotelproject.Service.ReservationService .up.|> dss.hotelproject.Interfaces.IReservationManage
+  dss.hotelproject.Service.ReservationService .up.|> dss.hotelproject.Interfaces.IReservationService
+  dss.hotelproject.Service.ReservationService o-- dss.hotelproject.repos.HotelRepo : hotelRepo
+  dss.hotelproject.Service.ReservationService o-- dss.hotelproject.Service.PaymentService : paymentService
+  dss.hotelproject.Service.ReservationService o-- dss.hotelproject.repos.ReservationRepo : reservationRepo
+  dss.hotelproject.Service.ReservationService o-- dss.hotelproject.repos.RoomRepo : roomRepo
+  dss.hotelproject.Service.RoomService .up.|> dss.hotelproject.Interfaces.ISearchForFreeRooms
+  dss.hotelproject.Service.RoomService o-- dss.hotelproject.repos.RoomRepo : roomRepo
+  dss.hotelproject.controller.Application o-- dss.hotelproject.repos.RoomRepo : roomRepo
+  dss.hotelproject.controller.Application o-- dss.hotelproject.Service.CheckOutService : checkOutService
+  dss.hotelproject.controller.Application o-- dss.hotelproject.repos.GuestRepo : guestRepo
+  dss.hotelproject.controller.Application o-- dss.hotelproject.repos.ReservationRepo : reservationRepo
+  dss.hotelproject.controller.Application o-- dss.hotelproject.Service.ReservationService : reservationService
+  dss.hotelproject.controller.Application o-- dss.hotelproject.Service.RoomService : roomService
+  dss.hotelproject.controller.GuestController o-- dss.hotelproject.repos.GuestRepo : guestRepo
+  dss.hotelproject.controller.GuestController o-- dss.hotelproject.repos.HotelRepo : hotelRepo
+  dss.hotelproject.controller.GuestController o-- dss.hotelproject.repos.ReservationRepo : reservationRepo
+  dss.hotelproject.controller.GuestController o-- dss.hotelproject.Service.ReservationService : reservationService
+  dss.hotelproject.util.Triple .up.|> java.io.Serializable
+  dss.hotelproject.util.Triple o-- dss.hotelproject.Enum.RoomType : roomType
+  dss.hotelproject.util.Triple o-- dss.hotelproject.Enum.RoomTypeByMaxNumOfPerson : roomTypeByMaxNumOfPerson
+
+
+
+@enduml

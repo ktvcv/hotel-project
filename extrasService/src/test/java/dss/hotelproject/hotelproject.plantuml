@@ -1,15 +1,6 @@
 @startuml
 
-title __SERVEREUREKA's Class Diagram__\n
-
-  namespace  {
-    namespace om.example.servereureka {
-      class com.example.servereureka.ServerEurekaApplication {
-          {static} + main()
-      }
-    }
-  }
-  
+title __HOTELPROJECT's Class Diagram__\n
 
 
 

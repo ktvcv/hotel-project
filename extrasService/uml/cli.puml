@@ -1,0 +1,38 @@
+@startuml
+
+dss.hotelproject.cli.AddCardCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.AddCardCommand o-- dss.hotelproject.cli.QuitCommand : quitCommand
+  dss.hotelproject.cli.AddCardCommand o-- dss.hotelproject.Model.Reservation.ReservationBuilder : reservationBuilder
+  dss.hotelproject.cli.AddCardCommand o-- dss.hotelproject.repos.ReservationRepo : reservationRepo
+  dss.hotelproject.cli.CancelCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.CancelCommand o-- dss.hotelproject.Service.ReservationService : reservationService
+  dss.hotelproject.cli.CheckInCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.CheckInCommand o-- dss.hotelproject.repos.ReservationRepo : reservationRepo
+  dss.hotelproject.cli.CheckInCommand o-- dss.hotelproject.Service.ReservationService : reservationService
+  dss.hotelproject.cli.CheckInCommand o-- dss.hotelproject.Service.RoomService : roomService
+  dss.hotelproject.cli.CheckOutCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.CheckOutCommand o-- dss.hotelproject.Service.CheckOutService : checkOutService
+  dss.hotelproject.cli.ChoiceCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.ChoiceCommand o-- dss.hotelproject.cli.CancelCommand : cancelCommand
+  dss.hotelproject.cli.ChoiceCommand o-- dss.hotelproject.cli.CheckInCommand : checkInCommand
+  dss.hotelproject.cli.ChoiceCommand o-- dss.hotelproject.cli.CheckOutCommand : checkOutCommand
+  dss.hotelproject.cli.ChoiceCommand o-- dss.hotelproject.cli.FindCommand : findCommand
+  dss.hotelproject.cli.CreateGuestCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.CreateGuestCommand o-- dss.hotelproject.repos.GuestRepo : guestRepo
+  dss.hotelproject.cli.FindCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.FindCommand o-- dss.hotelproject.cli.ChoiceCommand : choiceCommand
+  dss.hotelproject.cli.FindCommand o-- dss.hotelproject.repos.HotelRepo : hotelRepo
+  dss.hotelproject.cli.FindCommand o-- dss.hotelproject.cli.ReservCommand : reservCommand
+  dss.hotelproject.cli.FindCommand o-- dss.hotelproject.Service.ReservationService : reservationService
+  dss.hotelproject.cli.QuitCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.QuitCommand o-- dss.hotelproject.cli.ChoiceCommand : choiceCommand
+  dss.hotelproject.cli.ReservCommand .up.|> dss.hotelproject.cli.Command
+  dss.hotelproject.cli.ReservCommand o-- dss.hotelproject.repos.HotelRepo : hotelRepo
+  dss.hotelproject.cli.ReservCommand o-- dss.hotelproject.cli.AddCardCommand : addCardCommand
+  dss.hotelproject.cli.ReservCommand o-- dss.hotelproject.cli.CreateGuestCommand : createGuestCommand
+  dss.hotelproject.cli.ReservCommand o-- dss.hotelproject.repos.GuestRepo : guestRepo
+  dss.hotelproject.cli.ReservCommand o-- dss.hotelproject.Model.Hotel : hotel
+  dss.hotelproject.cli.ReservCommand o-- dss.hotelproject.Enum.RoomType : roomType
+  dss.hotelproject.cli.ReservCommand o-- dss.hotelproject.Enum.RoomTypeByMaxNumOfPerson : roomTypeByMaxNumOfPerson
+
+@enduml

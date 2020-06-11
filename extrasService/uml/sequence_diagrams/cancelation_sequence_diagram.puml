@@ -1,0 +1,23 @@
+@startuml
+autonumber
+actor Guest
+boundary ViewComponent
+control Controller
+boundary CancellationService
+boundary CancellationService
+boundary RoomRepo
+boundary ReservationRepo
+database Database
+
+Guest->ViewComponent:Input dni and code
+ViewComponent->Controller: accept data and request to CancellationService
+Controller->ReservationRepo: findReservationByCode()
+ReservationRepo-->Controller: update data
+Controller->CancellationService: cancel()
+CancellationService-->Controller: update data
+Controller->ViewComponent:Update view with result
+
+
+CancellationService->Rese
+
+@enduml
