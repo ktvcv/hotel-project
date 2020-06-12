@@ -1,5 +1,6 @@
 package dss.hotelproject.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.validator.constraints.Length;
 
@@ -8,7 +9,6 @@ import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Hotel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,8 +23,10 @@ public class Hotel {
     private String name;
     private int stars;
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Room> rooms;
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Reservation> reservations;
 
     public Hotel() {

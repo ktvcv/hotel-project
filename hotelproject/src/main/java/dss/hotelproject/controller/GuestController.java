@@ -27,7 +27,7 @@ public class GuestController {
     @RequestMapping(value = "/registerGuest",
             params = {"hotel_id", "dni", "name", "surname", "email", "phone"},
             method = RequestMethod.POST)
-    public Guest registerGuest(@RequestParam("hotel_id") Long hotel_id,
+    public String registerGuest(@RequestParam("hotel_id") Long hotel_id,
                                                 @Pattern(message = "Data is not correct: ${validatedValue}",
                                                         regexp = "\\d{8}[A-HJ-NP-TV-Z]")
                                                 @RequestParam("dni") String dni,
@@ -55,12 +55,12 @@ public class GuestController {
         if(guestService.getGuestByDni(dni)!=null)
         {
             logger.warn("guest already created");
-            return null;
+            return "Guest already exists";
         }
         guestService.saveGuest(guest);
         logger.info("guest created");
 
-        return guest;
+        return guest.toString();
     }
 
 

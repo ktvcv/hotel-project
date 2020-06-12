@@ -15,14 +15,13 @@ import dss.hotelproject.Service.RoomService;
 import dss.hotelproject.util.GeneratorHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -36,19 +35,17 @@ public class ReservationController {
     @Autowired
     HotelService hotelService;
 
-    @RequestMapping(value = "/allReservations",
-            params = {"hotel_id"},
-            method = RequestMethod.GET)
-    public List<Reservation> getAllReservation(@RequestParam("hotel_id") Long hotel_id)
+    @GetMapping(value = "/allReservations/{hotel_id}")
+    public Reservation[] getAllReservation(@PathVariable Long hotel_id)
     {
-        return reservationService.getAllByHotelId(hotel_id);
+        return reservationService.getAllByHotelId(hotel_id).toArray(new Reservation[0]);
     }
 
 
     @RequestMapping(value = "/reserveRoom",
-            params = {"hotel_id", "dateFrom", "dateTo", "numberOfPerson", "roomType", "dni", "confirmationCode", "cardCode", "cardCVC", "cardMonth", "cardYear"},
+            params = {"hotel_id", "dateFrom", "dateTo", "numberOfPerson", "roomType", "dni", "cardCode", "cardCVC", "cardMonth", "cardYear"},
             method = RequestMethod.POST)
-    public Reservation saveReservation(@RequestParam("hotel_id") Long hotel_id,
+    public String saveReservation(@RequestParam("hotel_id") Long hotel_id,
                                        @RequestParam("dateFrom") @DateTimeFormat(pattern = "dd.MM.yyyy") LocalDate dateFrom,
                                        @RequestParam("dateTo") @DateTimeFormat(pattern = "dd.MM.yyyy") LocalDate dateTo,
                                        @RequestParam("numberOfPerson") int numberOfPerson,
@@ -75,14 +72,19 @@ public class ReservationController {
                 .withDateFrom(dateFrom)
                 .withDateTo(dateTo)
                 .withGuest(guest)
+                .withServicesList(new ArrayList<>())
                 .withNumberOfPersons(numberOfPerson)
                 .withConfirmationCode(code)
                 .withHotel(hotelService.getHotelById(hotel_id))
                 .withPaymentMethod(new CreditCardPayment(new CreditCard(cardCode,cardCVC,cardMonth,cardYear)))
                 .build();
 
+        reservation.setTotalCost(getTotalCost(reservation.getRoomType(),reservation.getDateFrom(), reservation.getDateTo(),reservation.getRoomTypeByMaxNumOfPerson()));
         reservationService.saveReservation(reservation);
-        return reservation;
+        return reservation.toString();
+    }
+    private double getTotalCost(RoomType roomType, LocalDate firstDay, LocalDate lastDay, RoomTypeByMaxNumOfPerson roomTypeByMaxNumOfPerson) {
+        return roomType.getPriceByType() * ChronoUnit.DAYS.between(firstDay,lastDay) * roomTypeByMaxNumOfPerson.getNumberOfPersonsByType();
     }
 
 

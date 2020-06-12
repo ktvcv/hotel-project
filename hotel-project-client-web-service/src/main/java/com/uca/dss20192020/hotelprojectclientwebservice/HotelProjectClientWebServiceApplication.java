@@ -19,71 +19,45 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Pattern;
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.List;
 
 @SpringBootApplication
 @RestController
 @EnableDiscoveryClient
+@EnableCircuitBreaker
 public class HotelProjectClientWebServiceApplication {
 
-	@LoadBalanced
-	@Bean
-	RestTemplate restTemplate(){
-		return new RestTemplate();
-	}
-
 	@Autowired
-	RestTemplate restTemplate;
+	ServiceWeb serviceWeb;
+
+	@GetMapping(value = "/welcome/{name}")
+	public ResponseEntity<String> freeRooms(@PathVariable String name) {
+		return serviceWeb.getGreeting(name);
+	}
 
 	@RequestMapping(value = "/findRooms",
 			params = {"hotel_id", "dateFrom", "dateTo", "numberOfPerson"},
 			method = RequestMethod.GET)
-	public ResponseEntity<Triple> freeRooms(@RequestParam("hotel_id") String hotel_id,
-										   @RequestParam("dateFrom") @DateTimeFormat(pattern = "dd.MM.yyyy") LocalDate dateFrom,
-										   @RequestParam("dateTo") @DateTimeFormat(pattern = "dd.MM.yyyy") LocalDate dateTo,
-										   @RequestParam("numberOfPerson")  int numberOfPerson) {
-		final String url = "http://booking/availableRooms";
+	public Triple[] freeRooms(@RequestParam("hotel_id") Long hotel_id,
+								  @RequestParam("dateFrom") String dateFrom,
+								  @RequestParam("dateTo") String dateTo,
+								  @RequestParam("numberOfPerson")  int numberOfPerson) {
 
-		return restTemplate.getForEntity(url,Triple.class,hotel_id,dateFrom, dateTo, numberOfPerson);
+		return serviceWeb.freeRooms(hotel_id,dateFrom,dateTo,numberOfPerson);
 	}
 
-	@GetMapping(value = "/welcome/{name}")
-	public ResponseEntity<String> freeRooms(@PathVariable String name) {
-		final String url = "http://BOOKINGSERVICE/index/"+name;
-
-		return restTemplate.getForEntity(url,String.class);
-	}
-
-	@RequestMapping(value = "/reserveRoom",
-			params = {"hotel_id", "dateFrom", "dateTo", "numberOfPerson", "roomType", "dni", "confirmationCode", "cardCode", "cardCVC", "cardMonth", "cardYear"},
-			method = RequestMethod.POST)
-	public ResponseEntity<Reservation> saveReservation(@RequestParam("hotel_id") Long hotel_id,
-									   @RequestParam("dateFrom") @DateTimeFormat(pattern = "dd.MM.yyyy") LocalDate dateFrom,
-									   @RequestParam("dateTo") @DateTimeFormat(pattern = "dd.MM.yyyy") LocalDate dateTo,
-									   @RequestParam("numberOfPerson") int numberOfPerson,
-									   @RequestParam("roomType") String roomType,
-									   @RequestParam("roomTypeByPerson") String roomTypeByPrice,
-									   @RequestParam("dni") String guestDNI,
-									   @Valid @Pattern(message = "Data is not correct: ${validatedValue}", regexp = "^[0-9]{16}$")
-									   @RequestParam("cardCode") String cardCode,
-									   @Valid @Pattern(message = "Data is not correct: ${validatedValue}", regexp = "^[0-9]{3}$")
-									   @RequestParam("cardCVC") String cardCVC,
-									   @Pattern(message = "Data is not correct: ${validatedValue}", regexp = "^(1[0-2]|[1-9])$")
-									   @RequestParam("cardMonth") String cardMonth,
-									   @Pattern(message = "Data is not correct: ${validatedValue}", regexp = "^[2][0-9]$")
-									   @RequestParam("cardYear") String cardYear)
+	@GetMapping(value = "/allReservations/{hotel_id}")
+	public Reservation[] getAllReservation(@PathVariable Long hotel_id)
 	{
-		final String url = "http://booking/reserveRoom";
-		ResponseEntity<Reservation> responseEntity = restTemplate.getForEntity(url,Reservation.class,hotel_id,dateFrom, dateTo, numberOfPerson, roomType,roomTypeByPrice, guestDNI,cardCode,cardCVC, cardMonth, cardYear);
-		if(responseEntity.getBody() == null)
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-		return responseEntity;
+		return serviceWeb.getAllReservation(hotel_id);
 	}
-
-
 	public static void main(String[] args) {
 		SpringApplication.run(HotelProjectClientWebServiceApplication.class, args);
 	}
+
 
 
 }

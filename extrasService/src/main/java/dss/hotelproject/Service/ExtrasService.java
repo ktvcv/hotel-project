@@ -5,6 +5,7 @@ import dss.hotelproject.Enum.Services;
 import dss.hotelproject.Model.Guest;
 import dss.hotelproject.Model.Reservation;
 import dss.hotelproject.Model.Room;
+import dss.hotelproject.Payment.CreditCardPayment;
 import dss.hotelproject.Payment.PaymentStrategy;
 import dss.hotelproject.repos.GuestRepo;
 import dss.hotelproject.repos.ReservationRepo;
@@ -26,7 +27,7 @@ public class ExtrasService  {
 
 
     public boolean pay(PaymentStrategy paymentMethod, double cost) {
-        paymentMethod.chargeMoney(cost);
+        new CreditCardPayment().chargeMoney(cost);
         return true;
     }
 
@@ -40,10 +41,8 @@ public class ExtrasService  {
         reservationRepo.save(reservation);
     }
 
-    public void addServiceToReservation(Reservation reservation, Services services) {
-        List<Services> servicesList = reservation.getServicesList();
-        servicesList.add(services);
-        reservation.setServicesList(servicesList);
+    public void saveReservation(Reservation reservation) {
+
         reservationRepo.save(reservation);
     }
 

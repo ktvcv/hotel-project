@@ -49,16 +49,16 @@ public class RoomManageController {
     @RequestMapping(value = "/availableRooms",
             params = {"hotel_id", "dateFrom", "dateTo", "numberOfPerson"},
             method = RequestMethod.GET)
-    public List<Triple> getAvailableRooms(@RequestParam("hotel_id") Long hotel_id,
-                                            @RequestParam("dateFrom") @DateTimeFormat(pattern = "dd.MM.yyyy") LocalDate dateFrom,
-                                            @RequestParam("dateTo") @DateTimeFormat(pattern = "dd.MM.yyyy") LocalDate dateTo,
-                                            @RequestParam("numberOfPerson") @Max(3) int numberOfPerson) throws NoDataFoundException {
+    public Triple[] getAvailableRooms(@RequestParam("hotel_id") Long hotel_id,
+                                    @RequestParam("dateFrom") @DateTimeFormat(pattern = "dd.MM.yyyy") LocalDate dateFrom,
+                                    @RequestParam("dateTo") @DateTimeFormat(pattern = "dd.MM.yyyy") LocalDate dateTo,
+                                    @RequestParam("numberOfPerson") @Max(3) int numberOfPerson) throws NoDataFoundException {
         if(dateTo.isBefore(dateFrom) || dateFrom.isBefore(LocalDate.now())) {
             throw new NoDataFoundException("Incorrect dated");
         }
             List<Reservation> reservations = reservationService.getReservationsWithinDates(hotel_id,dateFrom, dateTo);
         return roomService.findFreeTypeRoomsForPeriod
-                (hotel_id, dateFrom, dateTo, numberOfPerson, reservations);
+                (hotel_id, dateFrom, dateTo, numberOfPerson, reservations).toArray(new Triple[0]);
 
     }
     @GetMapping(value = "/index/{name}")

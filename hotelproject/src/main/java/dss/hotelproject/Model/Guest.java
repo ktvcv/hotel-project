@@ -1,6 +1,7 @@
 package dss.hotelproject.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -13,11 +14,7 @@ public class Guest {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Pattern(message = "Data is not correct: ${validatedValue}",
-            regexp = "^\\d{4,13}$")
     private String name;
-    @Pattern(message = "Data is not correct: ${validatedValue}",
-            regexp = "^\\d{4,13}$")
     private String surname;
     private String mobile;
     @Pattern(message = "Data is not correct: ${validatedValue}",
@@ -30,6 +27,7 @@ public class Guest {
 
 
     @OneToMany(mappedBy = "guest", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Reservation> reservations;
 
     public Long getId() {

@@ -1,5 +1,6 @@
 package dss.hotelproject.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import dss.hotelproject.Enum.RoomType;
 import dss.hotelproject.Enum.RoomTypeByMaxNumOfPerson;
@@ -12,13 +13,13 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @ManyToOne
     @JoinColumn(name = "guest_id")
+    @JsonIgnore
     private Guest guest;
     @Enumerated(EnumType.ORDINAL)
     private RoomType roomType;
@@ -43,6 +44,7 @@ public class Reservation {
     @ManyToOne
     @JoinColumn(name = "hotel_id")
     @NotNull
+    @JsonIgnore
     private Hotel hotel;
 
 
@@ -157,7 +159,6 @@ public class Reservation {
     @Override
     public String toString() {
         return "Reservation: " +
-                ", guest=" + guest +
                 ", roomType=" + roomType +
                 ", roomTypeOfPerson=" + roomTypeByMaxNumOfPerson +
                 ", dateFrom=" + dateFrom +

@@ -23,7 +23,7 @@ public class ReservationManage {
     @RequestMapping(value = "/addServiceToReservationAdmin",
             params = {"hotel_id", "reservationCode", "service", "number"},
             method = RequestMethod.POST)
-    public JSONObject addServiceToReservation(@RequestParam("hotel_id") Long hotel_id,
+    public String addServiceToReservation(@RequestParam("hotel_id") Long hotel_id,
                                               @RequestParam("reservationCode") String reservationCode,
                                               @RequestParam("DNI") String dni,
                                               @RequestParam("service") String service) throws AccessDeniedException, NoDataFoundException {
@@ -35,7 +35,7 @@ public class ReservationManage {
         if(guest==null)
         {
             jsonObject.put("Error", "No such guest");
-            return jsonObject;
+            return jsonObject.toString();
         }
 
         if(reservation.getGuest() == guest) {
@@ -47,19 +47,21 @@ public class ReservationManage {
                 servicesList.add(Services.Parking);
             else {
                 jsonObject.put("Error", "No such reservation");
-                return jsonObject;
+                return jsonObject.toString();
             }
         }
         else {
             jsonObject.put("Error", "No such guest with this reservation");
-            return jsonObject;
+            return jsonObject.toString();
         }
 
         jsonObject.put("Guest dni", guest.getDNI());
         jsonObject.put("Service", Services.valueOf(service));
         jsonObject.put("Price", Services.valueOf(service).getServicePrice());
         jsonObject.put("Room", reservation.getRoom().getRoomNumber());
-        return jsonObject;
+        reservation.setServicesList(servicesList);
+        extrasService.saveReservation(reservation);
+        return jsonObject.toString();
 
     }
     @RequestMapping(value="/checkOut", params = {"hotel_id", "reservation_code"}, method= RequestMethod.POST)

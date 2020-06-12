@@ -3,9 +3,14 @@ package dss.hotelproject;
 import dss.hotelproject.Enum.RoomStatus;
 import dss.hotelproject.Enum.RoomType;
 import dss.hotelproject.Enum.RoomTypeByMaxNumOfPerson;
+import dss.hotelproject.Model.Guest;
 import dss.hotelproject.Model.Hotel;
+import dss.hotelproject.Model.Reservation;
 import dss.hotelproject.Model.Room;
+import dss.hotelproject.Payment.CreditCardPayment;
+import dss.hotelproject.Service.GuestService;
 import dss.hotelproject.Service.HotelService;
+import dss.hotelproject.Service.ReservationService;
 import dss.hotelproject.Service.RoomService;
 import dss.hotelproject.repos.HotelRepo;
 import dss.hotelproject.repos.RoomRepo;
@@ -15,6 +20,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+
+import java.time.LocalDate;
 
 @SpringBootApplication
 @EnableEurekaClient
@@ -26,7 +33,9 @@ public class HotelprojectApplication {
 
 	@Bean
 	public CommandLineRunner demo(HotelService hotelService,
-								  RoomService roomService) {
+								  RoomService roomService,
+								  GuestService guestService,
+								  ReservationService reservationService) {
 		return (args) -> {
 
 			Hotel hotel =  new Hotel.HotelBuilder()
@@ -38,6 +47,15 @@ public class HotelprojectApplication {
 					.build();
 
 			hotelService.saveHotel(hotel);
+
+			Guest guest = new Guest.GuestBuilder().withDNI("33333333E")
+					.withMobile("333333333")
+					.withSurname("Kotovets")
+					.withMail("kotovec@gmail.com")
+					.withName("Viktoriia")
+					.build();
+
+			guestService.saveGuest(guest);
 
 			Room room1 =
 					new Room.RoomBuilder()

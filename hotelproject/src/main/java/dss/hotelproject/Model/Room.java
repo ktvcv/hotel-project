@@ -1,5 +1,6 @@
 package dss.hotelproject.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import dss.hotelproject.Enum.RoomStatus;
 import dss.hotelproject.Enum.RoomType;
@@ -30,11 +31,13 @@ public class Room{
     private RoomStatus roomStatus;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "guest_id")
     private Guest guest;
 
     @ManyToOne
     @JoinColumn(name = "hotel_id")
+    @JsonIgnore
     @NotNull
     private Hotel hotel;
 
